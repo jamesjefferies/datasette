@@ -201,7 +201,7 @@ def temporary_heroku_directory(
                 f"https://github.com/simonw/datasette/archive/{branch}.zip"
             ] + list(install)
         else:
-            install = ["datasette"] + list(install)
+            install = ["datasette @ git+https://github.com/jamesjefferies/datasette@patch-for-issue-2429"] + list(install)
 
         with open("requirements.txt", "w") as fp:
             fp.write("\n".join(install))
